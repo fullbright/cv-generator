@@ -1,0 +1,50 @@
+{
+  "profile": {
+    "name": "Sergio Afanou",
+    "title": "Software Engineer & Indie Maker",
+    "email": "sergio@bright-softwares.com",
+    "github": "https://github.com/sergioafanou",
+    "linkedin": "https://linkedin.com/in/sergioafanou",
+    "website": "https://bright-softwares.com",
+    "location": "France",
+    "summary": "Full-stack software engineer and solopreneur building SaaS products, automation tools, and enterprise solutions. Specializes in Python, JavaScript, Google Apps Script, Jekyll, and cloud-native architectures."
+  },
+  "entries": [
+    {
+      "title": "InboxPulse — 8-Component Email Intelligence System",
+      "role": "Sole Engineer",
+      "company": "Bright Softwares (solo)",
+      "period": "2026-04 – 2026-06",
+      "type": "project",
+      "skills": ["Google Apps Script", "Google Sheets API", "Gmail API", "n8n", "JavaScript", "Node.js"],
+      "summary": "Built an 8-component email intelligence system integrating two Gmail addons via a shared Google Sheets bus.",
+      "description": "Designed and shipped G1 SORTER (rule-based routing), G2 HARVEST (metadata extraction), G3 PULSE (analytics), G4 SENTRY (threshold alerts), G5 CONDUIT (n8n bridge), G6 GUARDIAN (follow-up enforcement), G7 ACTION HUB (sidebar actions), and G8 WATCHER (compliance monitor).",
+      "achievements": [
+        "192 unit tests across 8 components — all passing",
+        "Zero paid services: full system runs on free-tier Google Workspace + self-hosted n8n",
+        "Single 1h shared trigger instead of 8 separate triggers (stays under 20-trigger cap)"
+      ],
+      "learnings": [
+        "Apps Script has no module system — test pure functions by mirroring them in Node.js",
+        "Google Sheets as a message bus is surprisingly capable for low-volume workflows"
+      ],
+      "source_sp": "[[238.019.PRJ.solo.initiative.prj-inboxpulse#SP10]]"
+    },
+    {
+      "title": "Smart CV — Jekyll Theme + Automation Pipeline",
+      "role": "Sole Engineer",
+      "company": "Bright Softwares (solo)",
+      "period": "2026-05 – 2026-06",
+      "type": "project",
+      "skills": ["Python", "Jekyll", "React", "Vite", "GitHub Actions", "Playwright"],
+      "summary": "Built an end-to-end CV automation pipeline: vault field schema → JSON export → Jekyll collection → React PDF generator.",
+      "description": "Designed CV-Entry:: vault field spec, wrote cv_entry_review.py (scans 100%-complete sub-projects), cv_linkedin_generator.py (3 LinkedIn formats per entry), cv_jekyll_publisher.py (generates _cv/*.md for Jekyll blog), and this Vite+React PDF generator.",
+      "achievements": [
+        "CV data flows from Obsidian sub-projects to Jekyll website to PDF in one vault shepherd run",
+        "LinkedIn post drafts auto-generated alongside each CV entry"
+      ],
+      "learnings": [],
+      "source_sp": "[[231.021.PRJ.solo.initiative.prj-smart-cv-jekyll-theme#SP3]]"
+    }
+  ]
+}

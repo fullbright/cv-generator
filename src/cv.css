@@ -1,0 +1,231 @@
+/* ============================================================
+   CV Generator — Print-Optimised Design
+   Fonts: Space Grotesk (headings) + Inter (body)
+   A4 page, 1.2cm margins, 10pt body
+   ============================================================ */
+
+:root {
+  --color-text-primary:   #1a1a2e;
+  --color-text-secondary: #4a4a6a;
+  --color-text-muted:     #6c757d;
+  --color-border:         #e0e0f0;
+  --color-accent:         #2563eb;
+  --color-surface:        #f8f9fc;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 10pt;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  background: #f0f0f0;
+}
+
+/* ---- CV document wrapper (A4 in browser) ---- */
+.cv-document {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 1.5rem auto;
+  background: #fff;
+  padding: 1.2cm;
+  box-shadow: 0 2px 12px rgba(26,41,128,.15), 0 8px 32px rgba(26,41,128,.08);
+}
+
+/* ---- Header ---- */
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 0.8em;
+  border-bottom: 2px solid var(--color-text-primary);
+  margin-bottom: 1.2em;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cv-header h1 {
+  font-family: var(--font-heading);
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.cv-header__title {
+  font-size: 11pt;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.cv-header__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: 8.5pt;
+}
+
+.cv-contact-item {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  display: block;
+}
+
+.cv-contact-item:hover { color: var(--color-accent); }
+
+/* ---- Sections ---- */
+.cv-section {
+  margin-bottom: 1.2em;
+}
+
+.cv-section__title {
+  font-family: var(--font-heading);
+  font-size: 10.5pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 3px;
+  margin-bottom: 0.7em;
+}
+
+/* ---- Summary ---- */
+.cv-summary__text {
+  font-size: 9.5pt;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+/* ---- Entry ---- */
+.cv-entry {
+  margin-bottom: 1em;
+  padding-bottom: 0.8em;
+  border-bottom: 1px solid var(--color-border);
+  page-break-inside: avoid;
+}
+
+.cv-entry:last-child { border-bottom: none; }
+
+.cv-entry__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.cv-entry__title {
+  font-family: var(--font-heading);
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cv-entry__role {
+  font-size: 8.5pt;
+  color: var(--color-text-secondary);
+  margin-top: 1px;
+}
+
+.cv-entry__meta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.cv-entry__period {
+  font-size: 8pt;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.cv-entry__type-badge {
+  font-size: 7.5pt;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: 3px;
+  padding: 1px 5px;
+  text-transform: capitalize;
+}
+
+.cv-entry__summary {
+  font-size: 9pt;
+  color: var(--color-text-secondary);
+  margin-bottom: 5px;
+  line-height: 1.45;
+}
+
+.cv-entry__achievements {
+  font-size: 8.5pt;
+  color: var(--color-text-primary);
+  padding-left: 1.1em;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.cv-entry__achievements li { margin-bottom: 1px; }
+
+.cv-entry__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+/* ---- Skill tags ---- */
+.cv-skill-tag {
+  font-size: 7.5pt;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.cv-skill-tag--large {
+  font-size: 8.5pt;
+  padding: 2px 7px;
+}
+
+/* ---- Skills grid ---- */
+.cv-skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* ============================================================
+   PRINT styles — A4, 1.2cm margins, no shadows
+   ============================================================ */
+@media print {
+  @page {
+    size: A4;
+    margin: 1.2cm;
+  }
+
+  body { background: none; }
+
+  .cv-document {
+    width: 100%;
+    min-height: unset;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .cv-section { margin-bottom: 0.9em; }
+
+  a { color: inherit !important; text-decoration: none !important; }
+}
